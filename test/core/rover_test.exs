@@ -39,21 +39,21 @@ defmodule RoamRoverTest do
   end
 
   test "move right n times" do
-    assert %Rover{moves: 'rrr', orientation: :west} =
+    assert %Rover{moves: 'rrr', orientation: :west} ==
              Rover.new() |> Rover.move(?r) |> Rover.move(?r) |> Rover.move(?r)
   end
 
   test "move left once" do
-    assert %Rover{moves: 'l', orientation: :west} = Rover.new() |> Rover.move(?l)
+    assert %Rover{moves: 'l', orientation: :west} == Rover.new() |> Rover.move(?l)
   end
 
   test "move left n times" do
-    assert %Rover{moves: 'lll', orientation: :east} =
+    assert %Rover{moves: 'lll', orientation: :east} ==
              Rover.new() |> Rover.move(?l) |> Rover.move(?l) |> Rover.move(?l)
   end
 
   test "move forward once" do
-    assert %Rover{moves: 'frr', orientation: :south, position: {0, -1}} =
+    assert %Rover{moves: 'frr', orientation: :south, position: {0, -1}} ==
              Rover.new() |> Rover.move(?r) |> Rover.move(?r) |> Rover.move(?f)
   end
 end
